@@ -1,21 +1,21 @@
 package April.a01;
 
-
-class Node{
+// Definition the type of single link list.
+class SNode{
 	public int data;
-	public Node next;
-	public Node(int data) {
+	public SNode next;
+	public SNode(int data) {
 		this.data = data;
 	}
 }
 
 public class LinkList {
-	public Node head;
+	public SNode head;
 	public int length = 0;
 	
 	// print the linked list
 	public void printLinklist() {
-		Node p = head;
+		SNode p = head;
 		while(p != null) {
 			System.out.println(p.data);
 			p = p.next;
@@ -34,13 +34,13 @@ public class LinkList {
 	
 	// build the linked list using the last insertion method
 	public void addLastNode(int data) {
-		Node n = new Node(data);
+		SNode n = new SNode(data);
 		if(head == null) {
 			head = n;
 			length++;
 			return ;
 		}
-		Node q = head;
+		SNode q = head;
 		while(q.next != null)
 			q = q.next;
 		q.next = n;
@@ -49,7 +49,7 @@ public class LinkList {
 	
 	// build the linked list using the head insertion method
 	public void addHeadNode(int data) {
-		Node n = new Node(data);
+		SNode n = new SNode(data);
 		if(head == null) {
 			head = n;
 			length++;
@@ -66,7 +66,7 @@ public class LinkList {
         if(index<1||index>length)  
             return false;  
         int i=1;  
-        Node p=head;  
+        SNode p=head;  
         while(i!=(index-1))  
         {  
             p=p.next;  
@@ -84,7 +84,7 @@ public class LinkList {
         if(index<1||index>length)  
             return false;  
         int i=1;  
-        Node p=head;  
+        SNode p=head;  
         while(i<index)  
             {p=p.next;i++;}  
         p.data=data;  

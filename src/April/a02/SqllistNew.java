@@ -1,25 +1,49 @@
 package April.a02;
 
-public class SqlList<T> {
+@SuppressWarnings("rawtypes")
+public class SqllistNew<T> implements SqlListInterface{
+	
 	private int length;
 	private T[] table;
+	
 
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		System.out.println(99);
+		return false;
+	}
 
+	@Override
+	public int length() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
 	public T get(int index) {
+		// TODO Auto-generated method stub
 		if (index >= 0 && index <= this.length)
 			return (T) this.table[index];
 		return null;
 	}
-	public T set(int index, T data) {
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Object set(int index, Object data) {
+		// TODO Auto-generated method stub
 		if(index >= 0 && index <= this.length && data != null) {
 			T old = (T)this.table[index];
-			this.table[index] = data;
+			this.table[index] = (T) data;
 			return old;
 		}
 		return null;
 	}
+
 	@SuppressWarnings("unchecked")
-	public boolean add(int index, T data) {
+	@Override
+	public boolean add(int index, Object data) {
+		// TODO Auto-generated method stub
 		// Deal with the value of edge.
 		if(data == null)
 			return false;
@@ -41,12 +65,21 @@ public class SqlList<T> {
 		for(int j=this.length - 1; j >= index; j--) {
 			this.table[ j + 1] = this.table[j];
 		}
-		this.table[index] = data;
+		this.table[index] = (T) data;
 		this.length++;
 		
 		return true;
 	}
-	public T remote(int index) {
+
+	@Override
+	public boolean add(Object data) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Object remote(int index, Object data) {
+		// TODO Auto-generated method stub
 		if(index > 0 && index < this.length && this.length != 0) {
 			T old = (T)this.table[index];
 			for(int j = index; j < this.length - 1; j++) {
@@ -58,7 +91,16 @@ public class SqlList<T> {
 		}
 		return null;
 	}
-	public boolean remoteAll(T data) {
+
+	@Override
+	public boolean remote(Object data) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean remoteAll(Object data) {
+		// TODO Auto-generated method stub
 		boolean d = false;
 		if(this.length != 0 && data != null) {
 			int i = 0;
@@ -73,7 +115,22 @@ public class SqlList<T> {
 		}
 		return d;
 	}
-	public int indexOf(T data) {
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean contains(Object data) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int indexOf(Object data) {
+		// TODO Auto-generated method stub
 		if(data != null) {
 			for(int i = 0; i < this.length; i++) {
 				if(data.equals(this.table[i]))
@@ -82,7 +139,10 @@ public class SqlList<T> {
 		}
 		return -1;
 	}
-	public int lastindexof(T data) {
+
+	@Override
+	public int lastIndexOf(Object data) {
+		// TODO Auto-generated method stub
 		if(data != null) {
 			for(int i =this.length - 1; i >=0; i--) {
 				if(data.equals(this.table[i]))
@@ -91,15 +151,5 @@ public class SqlList<T> {
 		}
 		return -1;
 	}
+
 }
-
-
-
-
-
-
-
-
-
-
-

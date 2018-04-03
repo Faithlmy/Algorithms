@@ -25,8 +25,8 @@ public class Progression {
 	
 	public void printProgression(int n) {
 		System.out.println(nextValue());
-		for(int j = 0; j < n; j++) {
-			System.out.println(" " + nextValue());
+		for(int j = 1; j < n; j++) {
+			System.out.print(" " + nextValue());
 		System.out.println();
 		}
 	}

@@ -24,11 +24,11 @@ public class Progression {
 	}
 	
 	public void printProgression(int n) {
-		System.out.println(nextValue());
+		System.out.print(nextValue());
 		for(int j = 1; j < n; j++) {
-			System.out.print(" " + nextValue());
-		System.out.println();
+			System.out.print("  " + nextValue());
 		}
+		System.out.println();
 	}
 
 }

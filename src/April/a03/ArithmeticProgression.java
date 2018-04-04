@@ -5,7 +5,7 @@ public class ArithmeticProgression extends Progression{
 	protected long increment;
 	
 	public ArithmeticProgression() {
-		this(0, 1);
+		this(1, 0);
 	}
 
 	public ArithmeticProgression(long stepsize) {

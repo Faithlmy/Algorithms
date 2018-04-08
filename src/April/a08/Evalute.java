@@ -1,5 +1,7 @@
 package April.a08;
-
+/*
+ * The console do not output result.
+ * */
 import java.util.Scanner;
 import java.util.Stack;
 

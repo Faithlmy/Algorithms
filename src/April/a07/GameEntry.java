@@ -17,7 +17,6 @@ public class GameEntry {
 		this.score = score;
 	}
 	
-	
 	public GameEntry(String n, int s) {
 		name = n;
 		score = s;

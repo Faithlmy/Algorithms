@@ -40,18 +40,6 @@ public class RealizeLinkList {
 			cur = cur.next; 
 		}
 		return linckLength;
-	}
-	
-	public void addIndexValue(Node n, int index, Object data) throws Exception {
-		RealizeLinkList rl = new RealizeLinkList();
-		if(first_head == null) {
-			throw new Exception("Empty null");
-		}
-		if((index >= 0) && (index <= rl.getLength()) ) {
-			
-		}
-	}
-	
-		
+	}		
 
 }

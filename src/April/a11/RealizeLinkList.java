@@ -42,7 +42,7 @@ public class RealizeLinkList {
 		return linckLength;
 	}
 	
-	public void addIndexValue(int index, Object data) throws Exception {
+	public void addIndexValue(Node n, int index, Object data) throws Exception {
 		RealizeLinkList rl = new RealizeLinkList();
 		if(first_head == null) {
 			throw new Exception("Empty null");
@@ -51,5 +51,7 @@ public class RealizeLinkList {
 			
 		}
 	}
+	
+		
 
 }

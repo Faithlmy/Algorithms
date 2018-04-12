@@ -10,6 +10,7 @@ public class TestLinkList {
 //		ll.deleteFirst();
 //		ll.deleteFirst();
 		ll.insertFirst(10);
+		ll.insertFirst('A');
 		ll.display();
 //		ll.remove(3);
 		ll.display();

@@ -1,4 +1,4 @@
-package April.a12;
+package April.a13;
 
 public class LinkList implements List{
 	
@@ -12,8 +12,8 @@ public class LinkList implements List{
 		this.nodeNum = 0;
 	}
 	
-	public void index(int site) throws Exception{
-		if(site < -1 || site > nodeNum - 1 ) {
+	public void indexTail(int site) throws Exception{
+		if(site < -1 || site  > nodeNum -1 ) {
 			throw new Exception("parameter transfinite!");
 		}
 		else {
@@ -28,15 +28,49 @@ public class LinkList implements List{
 			}
 		}
 	}
+	
 
+	@Override
+	public void insertTail(int site, Object n) throws Exception {
+		// TODO Auto-generated method stub
+		if(site < 0 || site  > nodeNum ) {
+			throw new Exception("Empty null!");
+		}
+		else {
+			indexTail(site -1 );
+			Node node = new Node(n, current.next);
+			current.setNext(node);
+			nodeNum++;
+		}
+	}
+	
+	@Override
+	public void insertHead(int length, Object n) throws Exception {
+		// TODO Auto-generated method stub
+		if(length == 1) {
+			Node node = new Node(null);
+			node.data = n;
+			nodeNum++;
+			System.out.println(123);
+			System.out.println(nodeNum);
+			System.out.println(node.getNext());
+		}
+		else {
+			Node node = new Node(n, current);
+			current.setHead(node);
+			nodeNum++;
+		}
+		
+	}
+	
 	@Override
 	public Object getValue(int site) throws Exception {
 		// TODO Auto-generated method stub
-		if(site < -1 || site > nodeNum - 1 ) {
+		if(site < -1 || site > nodeNum-1 ) {
 			throw new Exception("parameter transfinite!");
 		}
 		else {
-			index(site);
+			indexTail(site);
 		}
 		return current.getData();
 	}
@@ -53,19 +87,7 @@ public class LinkList implements List{
 		return nodeNum == 0;
 	}
 
-	public void insert(int site, Object n) throws Exception {
-		// TODO Auto-generated method stub
-		if(site < 0 || site > nodeNum) {
-			throw new Exception("Empty null!");
-		}
-		else {
-			index(site - 1);
-			Node node = new Node(n, current.next);
-			current.setNext(node);
-			nodeNum++;
-		}
-	}
-
+	
 	@Override
 	public void delete(int site) throws Exception {
 		// TODO Auto-generated method stub
@@ -76,7 +98,7 @@ public class LinkList implements List{
 			throw new Exception("Empty null!");
 		}
 		else {
-			index(site - 1);
+			indexTail(site - 1);
 			current.setNext(current.next.next);
 			nodeNum--;
 		}
@@ -94,14 +116,12 @@ public class LinkList implements List{
 			if(nodeNum == 1) {
 				System.out.println(current.data.toString() + "->");
 			}
-			else {
-				while(nodeNum > 1 && nodeNum > j) {
-					System.out.print(current.data.toString() + "->");
-					current = current.next;
-					j++;
-				}
+			while(nodeNum > 1 && nodeNum > j) {
+				System.out.print(current.data.toString() + "->");
+				current = current.next;
+				j++;
 			}
-			
+			System.out.println();
 		}
 		
 	}

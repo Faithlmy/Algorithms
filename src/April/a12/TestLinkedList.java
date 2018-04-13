@@ -6,14 +6,27 @@ public class TestLinkedList {
 		int length = ll.listLength();
 		System.out.println(length);
 		System.out.println(ll.isEmpty());
-		for(int i = 0, j = 10; i < 3; i++) {
-			ll.insert(i, 8);;
+		ll.insert(0, 3);
+		ll.showLinkList();
+		ll.insert(1, 2);
+		ll.showLinkList();
+		System.out.println();
+		ll.insert(2, 20);
+		ll.showLinkList();
+		System.out.println();
+//		ll.insert(3, 30);
+//		ll.showLinkList();
+//		System.out.println();
+//		System.out.println(ll.isEmpty());
+		for(int i = ll.listLength(), j = 10; i < 10; i++) {
+			ll.insert(i, j);;
 			j++;
 		}
-		int nl = ll.listLength();
-		System.out.println(nl);
-//		System.out.println(ll.getValue(5));
 		ll.showLinkList();
+//		int nl = ll.listLength();
+//		System.out.println(nl);
+//		System.out.println(ll.getValue(5));
+		
 	}
 
 }

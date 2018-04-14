@@ -18,4 +18,6 @@ public interface List {
 	
 	public void showLinkList() throws Exception;
 	
+	public void reverse()throws Exception;
+	
 }

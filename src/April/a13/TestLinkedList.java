@@ -3,11 +3,11 @@ package April.a13;
 public class TestLinkedList {
 	public static void main(String[] args) throws Exception {
 		LinkList ll = new LinkList();
-		ll.insertHead(3, 1);
-		int length = ll.listLength();
-//		
-		System.out.println(length);
-		System.out.println(ll.isEmpty());
+//		ll.insertHead(3, 1);
+//		int length = ll.listLength();
+////		
+//		System.out.println(length);
+//		System.out.println(ll.isEmpty());
 //		ll.showLinkList();
 //
 //		ll.insertHead(0, 3);
@@ -35,16 +35,18 @@ public class TestLinkedList {
 		
 //		System.out.println(ll.isEmpty());
 //		Node node = new Node();
-//		for(int i = 0, j = 10; i < 9; i++) {
-//			ll.insertHead(node, i);;
-//			j++;
-//		}
-//		int nl = ll.listLength();
-//		System.out.println(nl);
+		for(int i = 0, j = 10; i < 5; i++) {
+			ll.insertTail(i, j);;
+			j++;
+		}
+		int nl = ll.listLength();
+		System.out.println(nl);
 //		System.out.println(ll.getValue(4));
-//		ll.showLinkList();
-//		ll.delete(4);
-//		ll.showLinkList();
+		ll.showLinkList();
+		ll.delete(1);
+		ll.reverse();
+//		System.out.println(ll.getValue(1));
+		ll.showLinkList();
 //		ll.insertAfter(4, 100);
 //		ll.showLinkList();
 		

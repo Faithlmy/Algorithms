@@ -5,9 +5,7 @@ public class Node {
 	Object data;
 	Node next;
 	
-	public Node() {
-		
-	}
+	public Node() {}
 	
 	// The construction method of head node
 	public Node(Node next) {

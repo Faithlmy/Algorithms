@@ -5,6 +5,13 @@ public class StackArrayRealize<T>  implements Stack {
 	private int maxSize;
 	private int top;
 	T[] arr;
+	
+	public StackArrayRealize() {}
+	public StackArrayRealize(int size) {
+		this.maxSize = size;
+		this.top = -1;
+		//https://www.cnblogs.com/y3596597/p/6832225.html
+	}
 
 	@Override
 	public boolean isEmpty() {

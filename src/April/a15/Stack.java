@@ -11,5 +11,8 @@ public interface Stack<T> {
 	public T peak();
 	
 	public T pop();
+	
+	public T bottem();
+
 
 }

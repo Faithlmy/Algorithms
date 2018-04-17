@@ -2,8 +2,10 @@ package April.a17;
 
 public class QueueArrayRealize  implements Queue {
 	
-    Object[] queue;
+    private Object[] queue;
     private int size;
+    private int head;
+    private int end;
 
     public QueueArrayRealize() {}
     
@@ -21,12 +23,11 @@ public class QueueArrayRealize  implements Queue {
 	@Override
 	public boolean isFull() {
 		// TODO Auto-generated method stub
-		return false;
+		return size == queue.length;
 	}
 
 	@Override
 	public void inQueue(Object data) {
-		// TODO Auto-generated method stub
 		
 	}
 

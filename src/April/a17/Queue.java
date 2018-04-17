@@ -6,8 +6,12 @@ public interface Queue {
 	
 	public boolean isFull();
 	
-	public void inQueue(Object data);
+	public void inQueue(Object data) throws Exception;
 	
-	public Object outQueue();
+	public Object outQueue() throws Exception;
+	
+	public void clear();
+	
+	public void showQueue() throws Exception;
 
 }

@@ -1,4 +1,4 @@
-package April.a17;
+package April.a18;
 
 public interface Queue {
 	
@@ -8,12 +8,10 @@ public interface Queue {
 	
 	public void inQueue(Object data) throws Exception;
 	
-	public Object outQueue() throws Exception;
+	public void outQueue() throws Exception;
 	
 	public void clear();
 	
 	public void showQueue() throws Exception;
-	
-	// https://www.cnblogs.com/fuck1/p/5996116.html
 
 }

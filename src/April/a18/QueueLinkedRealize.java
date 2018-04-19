@@ -27,12 +27,6 @@ public class QueueLinkedRealize implements Queue{
 
 	public void inQueue(Object data) throws Exception {
 		// TODO Auto-generated method stub
-		/*
-		 *         Node p = new Node(x); // 生成新结点  
-        p.setNext(rear.getNext());// 插入链队列的尾部  
-        rear.setNext(p);  
-        rear = p; 
-		 * */
 		Node p = new Node(data);
 		p.setNext(end.getNext());
 		end.setNext(p);

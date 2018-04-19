@@ -19,11 +19,13 @@ public interface  TreeList<T extends Comparable> {
 	
 	public void  insert(T data) throws Exception;
 	
-	public void remote(T data);
+	public void remote(T data) throws Exception;
 	
 	public T maxValue();
 	
 	public T minValue();
+	
+	T findMin() throws Exception;
 	
 	public boolean findValue( Object data);
 	

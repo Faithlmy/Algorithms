@@ -1,6 +1,6 @@
 package April.a19;
 
-public class BinaryTree<T>  implements TreeList  {
+public class BinaryTree<T extends Comparable>  implements TreeList<T>  {
 	
 	protected BinaryNode<T> root;
 	
@@ -9,7 +9,7 @@ public class BinaryTree<T>  implements TreeList  {
 	public BinaryTree() {
 		this.root = null;
 	}
-// https://blog.csdn.net/javazejian/article/details/53727333
+
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
@@ -53,25 +53,66 @@ public class BinaryTree<T>  implements TreeList  {
 	}
 
 	@Override
-	public void insert(Comparable data) throws Exception {
+	public void insert(T data) throws Exception {
 		// TODO Auto-generated method stub
+		if(data == null) {
+			throw new Exception("no data.");
+		}
+		root = insert(data, root);
 		
 	}
 
-	@Override
-	public void remote(Comparable data) {
+	private BinaryNode<T> insert(T data, BinaryNode<T> root2) {
 		// TODO Auto-generated method stub
+		if(root2 == null) {
+			root2 = new BinaryNode(data, null, null);
+		}
+		int compareResult=data.compareTo(root2.data);
 		
+		if(compareResult < 0) {
+			root2.left = insert(data, root2.left);
+		}
+		if(compareResult > 0) {
+			root2.right = insert(data, root2.right);
+		}
+		return root2;
+	}
+	
+	@Override
+	public void remote(T data) throws Exception {
+		// TODO Auto-generated method stub
+		if(data == null) {
+			throw new Exception("no data");
+		}
+		root = remote(data, root);
 	}
 
+	private BinaryNode<T> remote(T data, BinaryNode<T> root2) {
+		// TODO Auto-generated method stub
+		if(root2 == null) return root2;
+		@SuppressWarnings("unchecked")
+		int compareResult = data.compareTo(root2.data);
+		if(compareResult < 0) {
+			root2.left = remote(data, root2.left);
+		}else if(compareResult > 0) {
+			root2.right = remote(data, root2.right);
+		}else if(root2.left != null && root2.right != null) {
+//			root2.data = findMin( root2.data).data;
+			root2.right = remote( root2.data, root2.right);
+		}else {
+			root2=(root2.left!=null)? root2.left : root2.right;
+		}
+		
+		return root2;
+	}
 	@Override
-	public Comparable maxValue() {
+	public T maxValue() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Comparable minValue() {
+	public T minValue() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -83,13 +124,13 @@ public class BinaryTree<T>  implements TreeList  {
 	}
 
 	@Override
-	public BinaryNode findNode(Comparable data) {
+	public BinaryNode findNode(T data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean contains(Comparable data) throws Exception {
+	public boolean contains(T data) throws Exception {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -98,6 +139,15 @@ public class BinaryTree<T>  implements TreeList  {
 	public void clear() {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public T findMin() throws Exception {
+		// TODO Auto-generated method stub
+		if(isEmpty()) {
+			throw new Exception("Empty tree");
+		}
+		
+		return null;
 	}
 
 

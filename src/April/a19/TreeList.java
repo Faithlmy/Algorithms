@@ -1,6 +1,6 @@
 package April.a19;
 
-public interface  TreeList {
+public interface  TreeList<T> {
 
 	public boolean isEmpty();
 	
@@ -16,7 +16,7 @@ public interface  TreeList {
 	
 	public Object levelOrder();
 	
-	public void  insert(Object data);
+	public void  insert(T data) throws Exception;
 	
 	public void remote(Object data);
 	

@@ -1,8 +1,14 @@
 package April.a19;
 
-public class BinaryTree implements TreeList{
+public class BinaryTree<T>  implements TreeList  {
+	
+	protected BinaryNode<T> root;
 	
 	private int conut;
+	
+	public BinaryTree() {
+		this.root = null;
+	}
 
 	@Override
 	public boolean isEmpty() {
@@ -46,10 +52,14 @@ public class BinaryTree implements TreeList{
 		return null;
 	}
 
+
 	@Override
-	public void insert(Object data) {
+	public void insert(Object data) throws Exception {
 		// TODO Auto-generated method stub
-		
+		if(data == null) {
+			throw new Exception("no data");
+		}
+		root = insert(data);
 	}
 
 	@Override
@@ -81,5 +91,6 @@ public class BinaryTree implements TreeList{
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

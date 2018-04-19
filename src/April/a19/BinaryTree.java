@@ -2,7 +2,7 @@ package April.a19;
 
 public class BinaryTree implements TreeList{
 	
-	
+	private int conut;
 
 	@Override
 	public boolean isEmpty() {

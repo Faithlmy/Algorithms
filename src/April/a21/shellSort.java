@@ -2,35 +2,32 @@ package April.a21;
 
 public class shellSort {
 
-	private int site;
 	private int[] arr;
 	
 	public shellSort() {}
 	
 	public shellSort(int[] arr) {
 		this.arr = arr;
-		this.site = 0;
 	}
 	
-	public void shellSite(int[] arr) {
-		this.arr = arr;
-		int site = arr.length / 2;
-		while(site >= 1) {
-			shellSort(site);
-			site = arr.length / 2;
+	public void shellSort(int size) { // find the site
+		int s = this.arr.length / size;
+		while(s >= 1) {
+			ShellSortCore(this.arr, s); // sorted
+			s = s/size;
 		}
 	}
 	
-	public void shellSort(int site) {
-		arr = this.arr;
-		for(int i = site; i < arr.length;  i++) {
-			if(arr[i] < arr[i - site]) {
+	private void ShellSortCore(int[] a, int site) {
+		for(int i = site; i < a.length;  i++) {
+			if(a[i] < a[i - site]) {
 				int j;
-				int x = arr[i];
-				for(j = i - arr[i - site]; j > 0 && x < arr[j]; j = j - arr[i - site]) {
-					arr[i + site] = arr[j];
+				int x = a[i];
+				a[i] = a[i-site];
+				for(j = i - site; j >= 0 && x < a[j]; j = j - site) {
+					a[j + site] = a[j];
 				}
-				arr[i + site]  = x;
+				a[j + site]  = x;
 			} 
 		}
 	}

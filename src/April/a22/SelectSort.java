@@ -8,10 +8,10 @@ public class SelectSort {
 	}
 	public void SelectSortCode() {
 		for(int i = 0; i < this.arr.length; i++) {
-			int k = i;
+			int k = i; // record the site of current.
 			for( int j = i + 1; j < this.arr.length; j++) {
 				if(this.arr[k] > this.arr[j]) {
-					k = j;
+					k = j; // choice site.
 				}
 			}
 			swap1(k, i);

@@ -9,7 +9,9 @@ public class TestBubble {
 		int[] a = ra.ArrayRandom(10, 100);
 		ra.ArrayPrint();
 		BubbleSort bs = new BubbleSort(a);
-		bs.bsCode();
+//		bs.bsCode();
+//		bs.bsCodeChange1();
+		bs.bsCodeChange2();
 		bs.BubblePrint();
 	}
 

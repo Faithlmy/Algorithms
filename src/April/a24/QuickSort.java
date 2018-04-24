@@ -11,18 +11,12 @@ public class QuickSort {
 	public void QuickCode(int[] arr, int low, int high) {
 		if(low < high) {
 			int mid = QuickMid(low, high);
-			QuickCode(arr, 0, mid - 1 );
+			QuickCode(arr, low, mid - 1 );
 			QuickCode(arr, mid + 1, high);
 		}
 		
 	}
 
-	public void QuickPrint() {
-		for(int i = 0; i <this.arr.length; i++) {
-			System.out.print(this.arr[i] + ", ");
-		}
-		System.out.println();
-	}
 
 	private int QuickMid(int low, int high) {
 		int key = this.arr[low];
@@ -38,6 +32,13 @@ public class QuickSort {
 		}
 		this.arr[low] = key;
 		return low;
+	}
+	
+	public void QuickPrint() {
+		for(int i = 0; i <this.arr.length; i++) {
+			System.out.print(this.arr[i] + ", ");
+		}
+		System.out.println();
 	}
 
 }

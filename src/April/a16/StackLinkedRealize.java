@@ -13,7 +13,7 @@ public class StackLinkedRealize implements Stack{
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return this.top == null;
+		return this.top == null? true:false;
 	}
 
 	@Override

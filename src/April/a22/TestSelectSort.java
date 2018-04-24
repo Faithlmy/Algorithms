@@ -6,7 +6,7 @@ public class TestSelectSort {
 	
 	public static void main(String[] args) throws Exception {
 		RandomArray ra = new RandomArray();
-		int[] arr = ra.ArrayRandom(10, 100);
+		int[] arr = ra.ArrayRandom(100, 1000);
 		System.out.println("The origin array is: ");
 		ra.ArrayPrint();
 		SelectSort ss = new SelectSort(arr);

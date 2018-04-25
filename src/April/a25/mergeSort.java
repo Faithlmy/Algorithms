@@ -16,16 +16,34 @@ public class mergeSort {
 			this.arr = arr;
 			this.left = 0;
 			this.right = this.arr.length;
-			this.center = (this.left + this.right)/2;
+//			this.center = (this.left + this.right)/2;
+			sort(this.arr, this.left, this.right);
 		}
 	}
 	
-	public void merge() {
-		int mid = this.center + 1;
-		int[] tempArr = new int[this.arr.length]; 
-		int aleft = this.left;
-		/*
-		 *         while (left <= center && mid <= right) {    
+	 public  void sort(int[] data, int left, int right) {    
+	        if (left >= right)    
+	            return;    
+	        // 找出中间索引    
+	        int center = (left + right) / 2;    
+	        // 对左边数组进行递归    
+	        sort(data, left, center);    
+	        // 对右边数组进行递归    
+	        sort(data, center + 1, right);    
+	        // 合并    
+	        merge(data, left, center, right);       
+	    }    
+	
+	private void merge(int[] data, int letf, int center, int right) {
+		 // 临时数组    
+        int[] tmpArr = new int[data.length];    
+        // 右数组第一个元素索引    
+        int mid = center + 1;    
+        // third 记录临时数组的索引    
+        int third = left;    
+        // 缓存左数组第一个元素的索引    
+        int tmp = left;    
+        while (left <= center && mid <= right) {    
             // 从两个数组中取出最小的放入临时数组    
             if (data[left] <= data[mid]) {    
                 tmpArr[third++] = data[left++];    
@@ -44,18 +62,14 @@ public class mergeSort {
         // （原left-right范围的内容被复制回原数组）    
         while (tmp <= right) {    
             data[tmp] = tmpArr[tmp++];    
-        }  
-		 * */
-		while(this.left <= center && mid <= right) {
-			if(this.arr[left] <= this.arr[mid]) {
-				tempArr[aleft++] = this.arr[left++];
-			}
-			else {
-				tempArr[aleft++] = this.arr[mid++];
-			}
-		}
+        }    
 	}
 	
-	
+	public void mergePrint() {
+		for(int i = 0; i <this.arr.length; i++) {
+			System.out.print(this.arr[i] + ", ");
+		}
+		System.out.println();
+	}
 
 }

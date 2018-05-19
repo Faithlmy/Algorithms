@@ -1,6 +1,7 @@
 package April.a19;
 
-public interface  TreeList<T> {
+@SuppressWarnings("rawtypes")
+public interface  TreeList<T extends Comparable> {
 
 	public boolean isEmpty();
 	
@@ -8,23 +9,27 @@ public interface  TreeList<T> {
 	
 	public int height();
 	
-	public Object preOrder();
+	public String preOrder();
 	
-	public Object inOrder();
+	public String inOrder();
 	
-	public Object postOrder();
+	public String postOrder();
 	
-	public Object levelOrder();
+	public String levelOrder();
 	
 	public void  insert(T data) throws Exception;
 	
-	public void remote(Object data);
+	public void remote(T data);
 	
-	public Object maxValue();
+	public T maxValue();
 	
-	public Object minValue();
+	public T minValue();
 	
 	public boolean findValue( Object data);
+	
+	public BinaryNode findNode(T data);
+	
+	boolean contains(T data) throws Exception;
 	
 	public void clear();
 	
